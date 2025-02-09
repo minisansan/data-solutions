@@ -1,6 +1,6 @@
 #LeetCode 570 至少有5名直接下属的经理 
 #首先进行group by操作，找到符合有五个下属经理的信息 ，生成临时表格
-#将生成的临时表格和原表格进行左连接，然后在进行输出name
+#将生成的临时表格和原表格进行内连接，然后在进行输出name
 SELECT e2.name
 FROM (
     SELECT managerId
@@ -9,7 +9,7 @@ FROM (
     GROUP BY managerId
     HAVING count(*)>=5
 ) AS e1
-LEFT JOIN Employee AS e2
+JOIN Employee AS e2
 ON e1.managerId =  e2.id;
 
 
@@ -31,8 +31,6 @@ ON e1.managerId =  e2.id;
  * 2. 每一行表示雇员的名字、他们的部门和他们的经理的id。
  * 3. 如果 managerId 为空，则该员工没有经理。
  * 4. 没有员工会成为自己的管理者。
- *
- * 要求：
  * 找出至少有五个直接下属的经理。
  * 以任意顺序返回结果表。
  */
