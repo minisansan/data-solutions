@@ -5,15 +5,20 @@
 #因为要找到不同的薪水，所以应该DISTINCT
 #并且要设置目标的salary<MAX(salary)
 
-SELECT IFNULL(
-    (SELECT DISTINCT salary
-     FROM Employee
-     WHERE salary < (SELECT MAX(salary) FROM Employee)
-     ORDER BY salary DESC
-     LIMIT 1
-    ) ,  NULL) AS SecondHighestSalary;
+--SELECT IFNULL(
+--    (SELECT DISTINCT salary
+--     FROM Employee
+--     WHERE salary < (SELECT MAX(salary) FROM Employee)
+--     ORDER BY salary DESC
+--     LIMIT 1
+--    ) ,  NULL) AS SecondHighestSalary;
 
 
+#聚合函数max + 标量子查询
+#根据max函数的特性，如果返回值为空，则返回null
+SELECT MAX(salary) AS SecondHighestSalary
+FROM Employee
+WHERE salary < (SELECT MAX(salary) FROM Employee);
 
 
 
@@ -27,4 +32,4 @@ SELECT IFNULL(
 
 -- 查询逻辑：
 -- 1. 使用子查询或窗口函数找到第二高的不同薪水。
--- 2. 如果没有第二高的薪水，返回 NULL。
+-- 2. 如果没有第二高的薪水，返回 NULL
