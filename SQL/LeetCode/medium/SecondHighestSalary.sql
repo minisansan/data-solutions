@@ -16,11 +16,21 @@
 
 #聚合函数max + 标量子查询
 #根据max函数的特性，如果返回值为空，则返回null
-SELECT MAX(salary) AS SecondHighestSalary
-FROM Employee
-WHERE salary < (SELECT MAX(salary) FROM Employee);
+--SELECT MAX(salary) AS SecondHighestSalary
+--FROM Employee
+--WHERE salary < (SELECT MAX(salary) FROM Employee)
 
 
+
+#利用窗口函数
+SELECT IFNULL(
+    (SELECT DISTINCT salary
+     FROM (
+         SELECT salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rn
+         FROM Employee
+     ) AS ranked
+     WHERE rn = 2),
+    NULL) AS SecondHighestSalary;
 
 -- 功能：查询并返回 Employee 表中第二高的不同薪水
 -- 如果不存在第二高的薪水，查询应该返回 NULL
