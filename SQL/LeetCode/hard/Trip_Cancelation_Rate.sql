@@ -1,3 +1,4 @@
+/*
 -- 首先将两个表连接起来，去掉 banned='Yes' 的行，形成一个临时表 A
 -- 在两个表连接的时候，要进行两次连接，第一次连接的是 client_id，第二次连接的是 driver_id
 WITH CET1 AS (
@@ -10,7 +11,7 @@ WITH CET1 AS (
     LEFT JOIN Users c ON c.users_id = t.client_id AND c.role = 'client'
     LEFT JOIN Users d ON d.users_id = t.driver_id AND d.role = 'driver'
 ),
--- 去掉有 'Yes' 的行
+-- 去掉有 'Yes' 的
 CET2 AS (
     SELECT status, request_at
     FROM CET1
@@ -24,6 +25,24 @@ SELECT
         2
     ) AS 'Cancellation Rate'
 FROM CET2
+GROUP BY request_at;
+*/
+
+
+#改进，在处理连接的时候，直接一步处理掉连接和yes的问题
+SELECT 
+    request_at AS Day,
+    ROUND(
+        SUM(CASE WHEN status != 'completed' THEN 1 ELSE 0 END) / COUNT(*), 
+        2
+    ) AS 'Cancellation Rate'
+FROM (
+    SELECT t.request_at, t.status
+    FROM Trips t
+    JOIN Users c ON t.client_id = c.users_id AND c.banned = 'No'
+    JOIN Users d ON t.driver_id = d.users_id AND d.banned = 'No'
+) AS A
+WHERE request_at BETWEEN '2013-10-01' AND '2013-10-03'
 GROUP BY request_at;
 
 /*
