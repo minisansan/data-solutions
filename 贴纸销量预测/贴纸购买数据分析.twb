@@ -1,0 +1,3486 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <ISO8601WeekNumbering_SP1 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='年' datatype='datetime' default-format='*yyyy' name='[参数 1]' param-domain-type='any' role='measure' type='quantitative' value='#2011-01-01 19:06:49#'>
+        <calculation class='tableau' formula='#2011-01-01 19:06:49#' />
+      </column>
+      <column caption='年1' datatype='integer' datatype-customized='true' name='[参数 2]' param-domain-type='list' role='measure' type='quantitative' value='2010'>
+        <calculation class='tableau' formula='2010' />
+        <members>
+          <member value='2010' />
+          <member value='2011' />
+          <member value='2012' />
+          <member value='2013' />
+          <member value='2014' />
+          <member value='2015' />
+          <member value='2016' />
+        </members>
+      </column>
+      <column caption='a' datatype='datetime' default-format='*yyyy' name='[参数 3]' param-domain-type='list' role='measure' type='quantitative' value='#2012-12-30 00:00:00#'>
+        <calculation class='tableau' formula='#2012-12-30 00:00:00#' />
+        <members>
+          <member value='#2012-12-30 00:00:00#' />
+          <member value='#2013-12-30 00:00:00#' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='train' inline='true' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='train' name='textscan.1syj3aw0rsbshe14odxcl0c16q1c'>
+            <connection class='textscan' directory='D:/wsh...c/2025/jupyter/data' filename='train.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1syj3aw0rsbshe14odxcl0c16q1c' name='train.csv' table='[train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+            <column datatype='integer' name='id' ordinal='0' />
+            <column datatype='date' name='date' ordinal='1' />
+            <column datatype='string' name='country' ordinal='2' />
+            <column datatype='string' name='store' ordinal='3' />
+            <column datatype='string' name='product' ordinal='4' />
+            <column datatype='real' name='num_sold' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>store</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[store]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>store</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>product</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_sold</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[num_sold]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>num_sold</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='train.csv' datatype='table' name='[__tableau_internal_object_id__].[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]' role='measure' type='quantitative' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+      <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+      <column caption='Store' datatype='string' name='[store]' role='dimension' type='nominal' />
+      <column-instance column='[date]' derivation='Month' name='[mn:date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+      <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
+      <column-instance column='[store]' derivation='None' name='[none:store:nk]' pivot='key' type='nominal' />
+      <column-instance column='[date]' derivation='Quarter' name='[qr:date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[date]' derivation='ISO-Qtr-Trunc' name='[tiqr:date:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[date]' derivation='Quarter-Trunc' name='[tqr:date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+      <group caption='操作(年(Date),季度(Date))' hidden='true' name='[Action (YEAR(Date),QUARTER(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:date:ok]' />
+          <groupfilter function='level-members' level='[tqr:date:ok]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[排除(Country,年(Date))]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:country:nk]' />
+          <groupfilter function='level-members' level='[yr:date:ok]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[排除(ISO季度(Date),年(Date))]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tiqr:date:qk]' />
+          <groupfilter function='level-members' level='[yr:date:ok]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='zh_CN' class='hyper' dbname='C:/Users/WSH/AppData/Local/Temp/TableauTemp/#TableauTemp_0pujaxk0c9kzry1157ae012id0xr.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/28/2025 08:57:01 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>train.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>230130</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>train.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>16429</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>2</ordinal>
+              <family>train.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>store</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[store]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>store</remote-alias>
+              <ordinal>3</ordinal>
+              <family>train.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product</remote-alias>
+              <ordinal>4</ordinal>
+              <family>train.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>num_sold</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[num_sold]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>num_sold</remote-alias>
+              <ordinal>5</ordinal>
+              <family>train.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10780</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[train.csv_B5394FED36A64BE58FDE28C36BF50A0C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[qr:date:ok]' type='palette'>
+            <map to='#76b7b2'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#a0d4ee'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#ffb03b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:country:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Norway&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Kenya&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Italy&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Singapore&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Finland&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:store:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Discount Stickers&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Stickers for Less&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Premium Sticker Mart&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:product:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Holographic Goose&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Kerneler Dark Mode&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Kerneler&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Kaggle Tiers&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Kaggle&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[yr:date:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>2010</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>2014</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>2013</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>2016</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>2012</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>2015</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2011</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[mn:date:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>2010</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>2014</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>2013</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>9</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>2016</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>10</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>11</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>2012</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>2015</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2011</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>12</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='train.csv' id='train.csv_B5394FED36A64BE58FDE28C36BF50A0C'>
+            <properties context=''>
+              <relation connection='textscan.1syj3aw0rsbshe14odxcl0c16q1c' name='train.csv' table='[train#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='id' ordinal='0' />
+                  <column datatype='date' name='date' ordinal='1' />
+                  <column datatype='string' name='country' ordinal='2' />
+                  <column datatype='string' name='store' ordinal='3' />
+                  <column datatype='string' name='product' ordinal='4' />
+                  <column datatype='real' name='num_sold' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='突出显示 1 (已生成)' name='[Action1_FC2EBA0F4FF14F3CBC3D0C6E2D2B8704]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='不同商店、国家、产品对销量的影响' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Product' />
+        <param name='target' value='不同商店、国家、产品对销量的影响' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Canada年销售额变化'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Canada年销售额变化</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:country:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:country:nk]' member='&quot;Canada&quot;' />
+                <groupfilter function='member' level='[none:country:nk]' member='&quot;Finland&quot;' />
+                <groupfilter function='member' level='[none:country:nk]' member='&quot;Italy&quot;' />
+                <groupfilter function='member' level='[none:country:nk]' member='&quot;Norway&quot;' />
+                <groupfilter function='member' level='[none:country:nk]' member='&quot;Singapore&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{056DF2B9-D657-4489-A575-32A98775E68F}' />
+    </worksheet>
+    <worksheet name='Finland年销售额变化'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Finland年销售额变化</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[date]' derivation='Month' name='[mn:date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='member' level='[none:country:nk]' member='&quot;Finland&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[mn:date:ok]' value='97' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{49F2D0F6-0E6D-4E0C-A581-E84EA077E868}' />
+    </worksheet>
+    <worksheet name='Italy年销售额变化'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Italy年销售额变化</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='member' level='[none:country:nk]' member='&quot;Italy&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{61CDC15E-A666-4355-B330-9B1115D7F7AB}' />
+    </worksheet>
+    <worksheet name='Kenya年销售额变化'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Kenya年销售额变化</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='member' level='[none:country:nk]' member='&quot;Kenya&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{4AB73EE2-8222-440A-80F7-3B3A26C54C1E}' />
+    </worksheet>
+    <worksheet name='Norway年销售额变化'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Norway年销售额变化</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='member' level='[none:country:nk]' member='&quot;Norway&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{F790784D-6288-41A6-B8D2-B80323A4FEBF}' />
+    </worksheet>
+    <worksheet name='Singapore年销售额变化'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Singapore年销售额变化</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='member' level='[none:country:nk]' member='&quot;Singapore&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{12EEC353-73D1-4A7B-9E45-1DC658F8D1BD}' />
+    </worksheet>
+    <worksheet name='不同产品的销售数量'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>                   不同产品的销售量</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Holographic Goose&quot;</bucket>
+              <bucket>&quot;Kaggle&quot;</bucket>
+              <bucket>&quot;Kerneler&quot;</bucket>
+              <bucket>&quot;Kaggle Tiers&quot;</bucket>
+              <bucket>&quot;Kerneler Dark Mode&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='322' />
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='148' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='28' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' />
+              <text column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878' fontsize='15'>Product:&#9;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878' fontsize='15'>Num Sold:&#9;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2523757219314575' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</cols>
+      </table>
+      <simple-id uuid='{548155B4-C3D8-463E-ADD3-FEBA0496C611}' />
+    </worksheet>
+    <worksheet name='不同商店的销售量'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>                    不同商店的销售量</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column-instance column='[store]' derivation='None' name='[none:store:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Store' datatype='string' name='[store]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='160' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='20' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3623204231262207' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</cols>
+      </table>
+      <simple-id uuid='{27BCCABF-8948-4A9B-9CDC-B2337B23B0A4}' />
+    </worksheet>
+    <worksheet name='不同国家的销售趋势'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>不同国家的销售量</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]'>
+            <groupfilter function='level-members' level='[none:country:nk]' />
+          </filter>
+          <computed-sort column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' direction='ASC' using='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' value='23' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' value='147' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='16' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='592' />
+                <format attr='maxheight' value='592' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</cols>
+      </table>
+      <simple-id uuid='{9F9FCA65-6734-40F2-AA27-E41A88DADE1A}' />
+    </worksheet>
+    <worksheet name='各商店和各商品的销售额'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;</run>
+            <run fontalignment='1'>Sheet Name</run>
+            <run fontalignment='1'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[store]' derivation='None' name='[none:store:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+            <column caption='Store' datatype='string' name='[store]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='78' />
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='78' />
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='160' />
+            <format attr='text-align' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='38' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' num-steps='9' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+              <text column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</cols>
+      </table>
+      <simple-id uuid='{43956367-35E5-4F42-8B9A-6E7669462FA9}' />
+    </worksheet>
+    <worksheet name='各商店和各商品的销售额条形'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;</run>
+            <run fontalignment='1'>Sheet Name</run>
+            <run fontalignment='1'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[store]' derivation='None' name='[none:store:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+            <column caption='Store' datatype='string' name='[store]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='73' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>([federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk] / [federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk])</cols>
+      </table>
+      <simple-id uuid='{761F8680-09BA-4699-AAAF-CE9A3FD91D4F}' />
+    </worksheet>
+    <worksheet name='各国各商店条形销售额'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;</run>
+            <run fontalignment='1'>Sheet Name</run>
+            <run fontalignment='1'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[store]' derivation='None' name='[none:store:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Store' datatype='string' name='[store]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' value='72' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='64' />
+            <format attr='text-align' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='left' />
+            <format attr='wrap' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='on' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='text-orientation' data-class='subtotal' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='0' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='col-width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='200' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>([federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk] / [federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk])</cols>
+      </table>
+      <simple-id uuid='{BB63A7EA-C6A2-43F7-BA31-1C6B0981935C}' />
+    </worksheet>
+    <worksheet name='各国和各商品的条形销售额'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;</run>
+            <run fontalignment='1'>Sheet Name</run>
+            <run fontalignment='1'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Kaggle&quot;</bucket>
+              <bucket>&quot;Kaggle Tiers&quot;</bucket>
+              <bucket>&quot;Holographic Goose&quot;</bucket>
+              <bucket>&quot;Kerneler&quot;</bucket>
+              <bucket>&quot;Kerneler Dark Mode&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='38' />
+            <format attr='text-orientation' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='90' />
+            <format attr='wrap' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='on' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='190' />
+                <format attr='maxwidth' value='190' />
+                <format attr='minheight' value='563' />
+                <format attr='maxheight' value='563' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>([federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk] / [federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk])</cols>
+      </table>
+      <simple-id uuid='{1459F578-6F39-4BE9-91E0-A74E77FC9B61}' />
+    </worksheet>
+    <worksheet name='各国和各商品的销售额'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;</run>
+            <run fontalignment='1'>Sheet Name</run>
+            <run fontalignment='1'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' value='82' />
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' value='87' />
+            <format attr='text-align' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' value='center' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' num-steps='12' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+              <text column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</cols>
+      </table>
+      <simple-id uuid='{3DD9E659-95D5-446A-B737-87F17F7F4D2F}' />
+    </worksheet>
+    <worksheet name='各国和各商店的销售额'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run><![CDATA[                                                        <]]></run>
+            <run>Sheet Name</run>
+            <run>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[store]' derivation='None' name='[none:store:nk]' pivot='key' type='nominal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column caption='Store' datatype='string' name='[store]' role='dimension' type='nominal' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='156' />
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' value='132' />
+            <format attr='text-align' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' value='center' />
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' value='91' />
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='234' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' value='10' />
+            <format attr='width' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' value='96' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' num-steps='9' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+              <lod column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</cols>
+      </table>
+      <simple-id uuid='{2D628191-78BD-48A0-A0A0-A06C6049FC98}' />
+    </worksheet>
+    <worksheet name='季度销售趋势'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='16'>可以看到是有季度销售区别的</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Quarter-Trunc' name='[tqr:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tqr:date:qk]' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tqr:date:qk]</cols>
+      </table>
+      <simple-id uuid='{542D2F59-436E-4E59-97C2-37E428AF9B2A}' />
+    </worksheet>
+    <worksheet name='整体的销售趋势'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#060607' fontname='-apple-system' fontsize='20'>整体销售趋势</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.05d6wu60nvl3j71c5j8el1vv9a6t' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05d6wu60nvl3j71c5j8el1vv9a6t'>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Num Sold' datatype='real' name='[num_sold]' role='measure' type='quantitative' />
+            <column-instance column='[num_sold]' derivation='Sum' name='[sum:num_sold:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Quarter-Trunc' name='[tqr:date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[Action (YEAR(Date),QUARTER(Date))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_5C750B18910E43218AE01118A4143F76]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:date:ok]' />
+              <groupfilter function='level-members' level='[tqr:date:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[Action (YEAR(Date),QUARTER(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' scope='rows' value='Total Number of Items Sold' />
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' field-type='quantitative' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]' scope='cols' value='Date ' />
+            <encoding attr='space' class='0' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]' field-type='quantitative' major-origin='#2013-05-17 12:00:00#' major-spacing='1.0' major-units='years' max='#2017-04-11 00:00:00#' min='#2009-12-30 00:00:00#' minor-origin='#2013-08-20 12:00:00#' minor-spacing='1.0' minor-units='quarters' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' value='n#,##0,,.00M;-#,##0,,.00M' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#f5f5f50b' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+            <format attr='fill-above' id='refline2' value='#00000000' />
+            <format attr='fill-below' id='refline2' value='#00000000' />
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='stroke-size' id='refline0' value='1' />
+            <format attr='stroke-color' id='refline0' value='#5555554b' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]</rows>
+        <cols>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{45FB94ED-CB66-4602-83B4-2BB3EC5A34D6}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='不同商店、国家、产品对销量的影响'>
+      <style />
+      <size maxheight='860' maxwidth='1620' minheight='560' minwidth='1620' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='7' param='horz' type-v2='layout-flow' w='99012' x='494' y='998'>
+            <zone h='98004' id='5' type-v2='layout-basic' w='99012' x='494' y='998'>
+              <zone h='81421' id='3' name='不同国家的销售趋势' w='36111' x='30556' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='81421' id='9' name='不同商店的销售量' w='30062' x='494' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='81421' id='11' name='不同产品的销售数量' w='32839' x='66667' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='16583' id='12' name='不同产品的销售数量' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type-v2='color' w='16111' x='66667' y='82419'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='160' h='16583' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='15679' x='30556' y='82419'>
+                <zone h='16583' id='8' name='不同国家的销售趋势' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' type-v2='color' w='15679' x='30556' y='82419'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='16583' id='10' name='不同商店的销售量' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' type-v2='color' w='12531' x='494' y='82419'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='16583' id='13' type-v2='text' w='17531' x='13025' y='82419'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#404040' fontname='Inter' fontsize='10'>Premium Sticker Mart 在所有商店中销售额最高，其次是 Stickers for Less。Discount Stickers 的销售额表现最低</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='16583' id='14' type-v2='text' w='20432' x='46235' y='82419'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#404040' fontname='Inter' fontsize='10'>挪威的总销售额最高，显著优于其他国家。新加坡和加拿大紧随其后，形成第二梯队。芬兰和意大利构成第三梯队，而肯尼亚的销售额则明显较低。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='16583' id='18' type-v2='text' w='16728' x='82778' y='82419'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#404040' fontname='Inter'>Kaggle 和 Kaggle Tiers 是销量最高的产品。Kerneler Dark Mode 和 Kerneler 紧随其后，而 Holographic Goose 的销售额最低。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='19' param='vert' type-v2='layout-flow' w='99012' x='494' y='998'>
+                <zone fixed-size='280' h='81421' id='9' is-fixed='true' name='不同商店的销售量' w='30062' x='494' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16583' id='10' name='不同商店的销售量' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' type-v2='color' w='12531' x='494' y='82419'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='81421' id='3' is-fixed='true' name='不同国家的销售趋势' w='36111' x='30556' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16583' id='8' name='不同国家的销售趋势' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' type-v2='color' w='15679' x='30556' y='82419'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='81421' id='11' is-fixed='true' name='不同产品的销售数量' w='32839' x='66667' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16583' id='12' name='不同产品的销售数量' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type-v2='color' w='16111' x='66667' y='82419'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='16583' id='13' type-v2='text' w='17531' x='13025' y='82419'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#404040' fontname='Inter' fontsize='10'>Premium Sticker Mart 在所有商店中销售额最高，其次是 Stickers for Less。Discount Stickers 的销售额表现最低</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='16583' id='14' type-v2='text' w='20432' x='46235' y='82419'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#404040' fontname='Inter' fontsize='10'>挪威的总销售额最高，显著优于其他国家。新加坡和加拿大紧随其后，形成第二梯队。芬兰和意大利构成第三梯队，而肯尼亚的销售额则明显较低。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16583' id='18' type-v2='text' w='16728' x='82778' y='82419'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#404040' fontname='Inter'>Kaggle 和 Kaggle Tiers 是销量最高的产品。Kerneler Dark Mode 和 Kerneler 紧随其后，而 Holographic Goose 的销售额最低。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5A0E95CD-2B4F-4F69-B421-1DA674CDB41D}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='各商店和各产品的销售额盘'>
+      <style />
+      <size maxheight='860' maxwidth='1620' minheight='560' minwidth='1520' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='7' param='horz' type-v2='layout-flow' w='99012' x='494' y='998'>
+            <zone h='98004' id='5' type-v2='layout-basic' w='99012' x='494' y='998'>
+              <zone h='76683' id='3' name='各商店和各商品的销售额' w='41790' x='494' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='88278' id='9' name='各商店和各商品的销售额条形' w='57222' x='42284' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='9102' id='8' name='各商店和各商品的销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type-v2='color' w='28642' x='494' y='77681'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='21321' id='10' name='各商店和各商品的销售额条形' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type-v2='color' w='13148' x='29136' y='77681'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='12219' id='11' type-v2='text' w='28642' x='494' y='86783'>
+                <formatted-text>
+                  <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='11'>Premium Sticker Mart</run>
+                  <run>Æ&#10;</run>
+                  <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='11'>在大多数产品的销售中占据最高份额，</run>
+                  <run>Æ&#10;</run>
+                  <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='11'>唯一例外是Holographic Goose在该产品上稍有优势。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='9726' id='12' type-v2='text' w='57222' x='42284' y='89276'>
+                <formatted-text>
+                  <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>Kaggle 和 Kaggle Tiers 是各个店铺的畅销产品。Holographic Goose 一直表现不佳，而 Discount Stickers 则是整体表现最差的店铺。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='13' param='vert' type-v2='layout-flow' w='99012' x='494' y='998'>
+                <zone fixed-size='280' h='76683' id='3' is-fixed='true' name='各商店和各商品的销售额' w='41790' x='494' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9102' id='8' name='各商店和各商品的销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type-v2='color' w='28642' x='494' y='77681'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='88278' id='9' is-fixed='true' name='各商店和各商品的销售额条形' w='57222' x='42284' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='21321' id='10' name='各商店和各商品的销售额条形' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type-v2='color' w='13148' x='29136' y='77681'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='12219' id='11' type-v2='text' w='28642' x='494' y='86783'>
+                  <formatted-text>
+                    <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='11'>Premium Sticker Mart</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='11'>在大多数产品的销售中占据最高份额，</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='11'>唯一例外是Holographic Goose在该产品上稍有优势。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9726' id='12' type-v2='text' w='57222' x='42284' y='89276'>
+                  <formatted-text>
+                    <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>Kaggle 和 Kaggle Tiers 是各个店铺的畅销产品。Holographic Goose 一直表现不佳，而 Discount Stickers 则是整体表现最差的店铺。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FF9E7785-A43A-4FB7-B6C7-35247B51E732}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='各国和各产品的销售额盘'>
+      <style />
+      <size maxheight='860' maxwidth='1620' minheight='560' minwidth='1620' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='9' param='horz' type-v2='layout-flow' w='99012' x='494' y='998'>
+            <zone h='98004' id='7' type-v2='layout-basic' w='99012' x='494' y='998'>
+              <zone h='65710' id='5' name='各国和各商品的销售额' w='47654' x='494' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='98004' id='11' name='各国和各商品的条形销售额' w='51358' x='48148' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='32294' id='12' name='各国和各商品的条形销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type-v2='color' w='13950' x='34198' y='66708'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='32294' id='10' name='各国和各商品的销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type-v2='color' w='33704' x='494' y='66708'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='22444' id='13' type-v2='text' w='33642' x='556' y='76434'>
+          <formatted-text>
+            <run bold='true' fontcolor='#06081fdf' fontname='D-DINExp' fontsize='12'>Kaggle产品在挪威的销售尤为突出。肯尼亚的所有产品销售最低。各国的产品偏好有所不同。</run>
+            <run>Æ&#10;</run>
+            <run bold='true' fontcolor='#06081fdf' fontname='D-DINExp' fontsize='12'>结合热图和柱状图的数据显示，Kaggle和Kaggle Tiers是销量最高的产品。挪威是Kaggle产品的主要市场，销售额显著高于其他国家。肯尼亚的所有产品销售情况持续最低。Holographic Goose是表现最差的产品。</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='800' minheight='800' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='14' param='vert' type-v2='layout-flow' w='99012' x='494' y='998'>
+                <zone fixed-size='280' h='65710' id='5' is-fixed='true' name='各国和各商品的销售额' w='47654' x='494' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='32294' id='10' name='各国和各商品的销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type-v2='color' w='33704' x='494' y='66708'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98004' id='11' is-fixed='true' name='各国和各商品的条形销售额' w='51358' x='48148' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='32294' id='12' name='各国和各商品的条形销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type-v2='color' w='13950' x='34198' y='66708'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='22444' id='13' type-v2='text' w='33642' x='556' y='76434'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#06081fdf' fontname='D-DINExp' fontsize='12'>Kaggle产品在挪威的销售尤为突出。肯尼亚的所有产品销售最低。各国的产品偏好有所不同。</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#06081fdf' fontname='D-DINExp' fontsize='12'>结合热图和柱状图的数据显示，Kaggle和Kaggle Tiers是销量最高的产品。挪威是Kaggle产品的主要市场，销售额显著高于其他国家。肯尼亚的所有产品销售情况持续最低。Holographic Goose是表现最差的产品。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8159A0FF-D9E3-445F-9495-A70708232A0B}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='各国和各商店的销售额盘'>
+      <style />
+      <size maxheight='860' maxwidth='1620' minheight='560' minwidth='1620' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='7' param='horz' type-v2='layout-flow' w='99012' x='494' y='998'>
+            <zone h='98004' id='5' type-v2='layout-basic' w='99012' x='494' y='998'>
+              <zone h='81172' id='3' name='各国和各商店的销售额' w='52407' x='494' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='81172' id='9' name='各国各商店条形销售额' w='46605' x='52901' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='7984' id='8' name='各国和各商店的销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type-v2='color' w='52407' x='494' y='91018'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='7984' id='10' name='各国各商店条形销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' type-v2='color' w='46605' x='52901' y='91018'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='8848' id='11' type-v2='text' w='52407' x='494' y='82170'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#404040' fontname='Inter'>Premium Sticker Mart 在每个国家销量表现都优于其他商店，挪威的 Premium Sticker Mart 销售额最高，而肯尼亚的 Discount Stickers 销售额最低。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='8848' id='12' type-v2='text' w='46605' x='52901' y='82170'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#404040' fontname='Inter'>Discount Stickers 在每个国家的销售额最低。挪威的整体销售额显著高于其他国家，肯尼亚的 Discount Stickers 总销售额最低。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='15' param='vert' type-v2='layout-flow' w='99012' x='494' y='998'>
+                <zone fixed-size='280' h='81172' id='3' is-fixed='true' name='各国和各商店的销售额' w='52407' x='494' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7984' id='8' name='各国和各商店的销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type-v2='color' w='52407' x='494' y='91018'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='81172' id='9' is-fixed='true' name='各国各商店条形销售额' w='46605' x='52901' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7984' id='10' name='各国各商店条形销售额' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' type-v2='color' w='46605' x='52901' y='91018'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='8848' id='11' type-v2='text' w='52407' x='494' y='82170'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#404040' fontname='Inter'>Premium Sticker Mart 在每个国家销量表现都优于其他商店，挪威的 Premium Sticker Mart 销售额最高，而肯尼亚的 Discount Stickers 销售额最低。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='8848' id='12' type-v2='text' w='46605' x='52901' y='82170'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#404040' fontname='Inter'>Discount Stickers 在每个国家的销售额最低。挪威的整体销售额显著高于其他国家，肯尼亚的 Discount Stickers 总销售额最低。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B7D549D6-D208-46DD-B21F-A4CB05D3D805}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='各国多年的销售额变化'>
+      <style />
+      <size maxheight='860' maxwidth='1620' minheight='560' minwidth='1620' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='7' param='horz' type-v2='layout-flow' w='99012' x='494' y='998'>
+            <zone h='98004' id='5' type-v2='layout-basic' w='88024' x='494' y='998'>
+              <zone h='37531' id='3' name='Canada年销售额变化' w='43333' x='494' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='32045' id='10' name='Finland年销售额变化' w='43333' x='494' y='38529'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='32045' id='11' name='Italy年销售额变化' w='44691' x='43827' y='38529'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='28428' id='12' name='Kenya年销售额变化' w='44691' x='43827' y='70574'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='28428' id='13' name='Norway年销售额变化' w='43333' x='494' y='70574'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='37531' id='14' name='Singapore年销售额变化' w='44691' x='43827' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='178' h='98004' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='10988' x='88518' y='998'>
+              <zone fixed-size='223' h='28803' id='9' is-fixed='true' name='Canada年销售额变化' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type-v2='color' w='10988' x='88518' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='505' forceUpdate='true' h='63966' id='15' is-fixed='true' type-v2='text' w='10988' x='88518' y='29801'>
+                <formatted-text>
+                  <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>各国的时间序列分析显示，所有国家都有季节性销售模式，销售在年末时出现高峰。</run>
+                  <run>Æ&#10;&#10;&#10;</run>
+                  <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>加拿大、</run>
+                  <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='13'>肯尼亚</run>
+                  <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>和新加坡的销售趋势呈上升趋势，其中加拿大的增长最为显著。</run>
+                  <run>Æ&#10;&#10;&#10;</run>
+                  <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='13'>芬兰、挪威、意大利大体呈现先升后降的趋势，但是挪威仍为断层最大</run>
+                  <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1800' minheight='1800' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='16' param='vert' type-v2='layout-flow' w='99012' x='494' y='998'>
+                <zone fixed-size='280' h='37531' id='3' is-fixed='true' name='Canada年销售额变化' w='43333' x='494' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='223' h='28803' id='9' name='Canada年销售额变化' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type-v2='color' w='10988' x='88518' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37531' id='14' is-fixed='true' name='Singapore年销售额变化' w='44691' x='43827' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='505' forceUpdate='true' h='63966' id='15' type-v2='text' w='10988' x='88518' y='29801'>
+                  <formatted-text>
+                    <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>各国的时间序列分析显示，所有国家都有季节性销售模式，销售在年末时出现高峰。</run>
+                    <run>Æ&#10;&#10;&#10;</run>
+                    <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>加拿大、</run>
+                    <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='13'>肯尼亚</run>
+                    <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>和新加坡的销售趋势呈上升趋势，其中加拿大的增长最为显著。</run>
+                    <run>Æ&#10;&#10;&#10;</run>
+                    <run fontcolor='#06081fdf' fontname='D-DINExp' fontsize='13'>芬兰、挪威、意大利大体呈现先升后降的趋势，但是挪威仍为断层最大</run>
+                    <run fontcolor='#06081fe0' fontname='D-DINExp' fontsize='13'>。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='268' h='32045' id='10' is-fixed='true' name='Finland年销售额变化' w='43333' x='494' y='38529'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='268' h='32045' id='11' is-fixed='true' name='Italy年销售额变化' w='44691' x='43827' y='38529'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='236' h='28428' id='13' is-fixed='true' name='Norway年销售额变化' w='43333' x='494' y='70574'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='236' h='28428' id='12' is-fixed='true' name='Kenya年销售额变化' w='44691' x='43827' y='70574'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{4AD762C4-7C96-4C14-9853-28B4AB106EBC}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='整体分析'>
+      <style />
+      <size maxheight='860' maxwidth='1620' minheight='560' minwidth='1620' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98004' id='8' param='horz' type-v2='layout-flow' w='99012' x='494' y='998'>
+            <zone h='98004' id='6' type-v2='layout-basic' w='84876' x='494' y='998'>
+              <zone h='49002' id='3' name='整体的销售趋势' w='84876' x='494' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49002' id='5' name='季度销售趋势' w='84876' x='494' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='229' h='98004' id='7' is-fixed='true' param='vert' type-v2='layout-flow' w='14136' x='85370' y='998'>
+              <zone h='22070' id='9' name='季度销售趋势' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type-v2='color' w='14136' x='85370' y='998'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='14340' id='10' type-v2='text' w='14136' x='85370' y='23068'>
+                <formatted-text>
+                  <run fontcolor='#404040' fontname='Inter' fontsize='14'>整体销售趋势显示出每年的季节性模式，通常在年初和年末达到峰值。</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98004' id='13' param='vert' type-v2='layout-flow' w='99012' x='494' y='998'>
+                <zone fixed-size='280' h='49002' id='3' is-fixed='true' name='整体的销售趋势' w='84876' x='494' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='14340' id='10' type-v2='text' w='14136' x='85370' y='23068'>
+                  <formatted-text>
+                    <run fontcolor='#404040' fontname='Inter' fontsize='14'>整体销售趋势显示出每年的季节性模式，通常在年初和年末达到峰值。</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49002' id='5' is-fixed='true' name='季度销售趋势' w='84876' x='494' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='22070' id='9' name='季度销售趋势' pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type-v2='color' w='14136' x='85370' y='998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B8D542EB-44BF-4276-8C45-0570F975AC1F}' />
+    </dashboard>
+    <dashboard name='贴纸销量的各维度分析' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text />
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='768' maxwidth='1620' minheight='768' minwidth='1620' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='1' param='vert' removable='false' type-v2='layout-flow' w='99012' x='494' y='1042'>
+            <zone h='1302' id='3' type-v2='title' w='99012' x='494' y='1042' />
+            <zone h='8203' id='4' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99012' x='494' y='2344' />
+            <zone h='88411' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99012' x='494' y='10547'>
+              <flipboard active-id='1' nav-type='dot' show-nav-arrows='true'>
+                <story-points>
+                  <story-point captured-sheet='整体分析' id='1' />
+                  <story-point captured-sheet='不同商店、国家、产品对销量的影响' id='2' />
+                  <story-point captured-sheet='各国和各商店的销售额盘' id='3' />
+                  <story-point captured-sheet='各国和各产品的销售额盘' id='4'>
+                    <capturedDeltas>
+                      <dashboard name='各国和各产品的销售额盘'>
+                        <zone id='13'>
+                          <formatted-text>
+                            <run bold='true' fontcolor='#06081fdf' fontname='D-DINExp' fontsize='12'>Kaggle产品在挪威的销售尤为突出。肯尼亚的所有产品销售最低。各国的产品偏好有所不同。</run>
+                            <run>Æ&#10;</run>
+                            <run bold='true' fontcolor='#06081fdf' fontname='D-DINExp' fontsize='12'>由图形显示，Kaggle和Kaggle Tiers是销量最高的产品。挪威是Kaggle产品的主要市场，销售额显著高于其他国家。肯尼亚的所有产品销售情况持续最低。Holographic Goose是表现最差的产品。</run>
+                          </formatted-text>
+                        </zone>
+                      </dashboard>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point captured-sheet='各商店和各产品的销售额盘' id='5' />
+                  <story-point captured-sheet='各国多年的销售额变化' id='6' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{DEFE2ADD-327E-41C1-A51D-7E8158E679C1}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='dashboard' maximized='true' name='贴纸销量的各维度分析'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{5AC455BA-7AEE-4F5A-B662-B8B6612B6BED}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Canada年销售额变化'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{565512A2-9A59-46CA-9816-4365863BE837}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Finland年销售额变化'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F558B6F5-02E5-4FB0-9254-9C6605D281CD}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Italy年销售额变化'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <axis>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tmn:date:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A4712E52-4E7E-44D5-9653-C49CB701A142}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Kenya年销售额变化'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{98107430-8BAB-4B28-9A97-61928D7C5614}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Norway年销售额变化'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7CE21E7E-CA22-4D2A-B957-9EC043173EF8}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Singapore年销售额变化'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F485E86E-CA38-4A19-9844-449793D36117}' />
+    </window>
+    <window class='worksheet' hidden='true' name='不同产品的销售数量'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:id:ok]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BCCE98C8-1A29-44AF-9734-57599AFBF0ED}' />
+    </window>
+    <window class='dashboard' hidden='true' name='不同商店、国家、产品对销量的影响'>
+      <viewpoints>
+        <viewpoint name='不同产品的销售数量'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='不同商店的销售量'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='不同国家的销售趋势'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5333751A-3F85-498D-A0D2-10198DE8A100}' />
+    </window>
+    <window class='worksheet' hidden='true' name='不同商店的销售量'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1E15113B-D270-4128-9A63-76747EE3B3BF}' />
+    </window>
+    <window class='worksheet' hidden='true' name='不同国家的销售趋势'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E1F62519-F701-44D7-AD5B-9D2F570B8339}' />
+    </window>
+    <window class='dashboard' hidden='true' name='各商店和各产品的销售额盘'>
+      <viewpoints>
+        <viewpoint name='各商店和各商品的销售额' />
+        <viewpoint name='各商店和各商品的销售额条形'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E9935898-9FEC-4524-A6B5-4CE87577A9DA}' />
+    </window>
+    <window class='worksheet' hidden='true' name='各商店和各商品的销售额'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A105D535-C6EB-4535-89A3-D093AA9EC77A}' />
+    </window>
+    <window class='worksheet' hidden='true' name='各商店和各商品的销售额条形'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F74F18E5-AFC4-485B-9707-2D803D3C46F0}' />
+    </window>
+    <window class='worksheet' hidden='true' name='各国各商店条形销售额'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7081B130-5BB3-4B5B-8059-BBF52E40EEAE}' />
+    </window>
+    <window class='dashboard' hidden='true' name='各国和各产品的销售额盘'>
+      <viewpoints>
+        <viewpoint name='各国和各商品的条形销售额'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='各国和各商品的销售额' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{3F316107-CFC8-4263-8B63-2E210BB28472}' />
+    </window>
+    <window class='worksheet' hidden='true' name='各国和各商品的条形销售额'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='104'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{608B1E8F-8C7D-462E-992E-D13F955D096D}' />
+    </window>
+    <window class='worksheet' hidden='true' name='各国和各商品的销售额'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:product:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{35749152-2C89-43AD-A6D0-129A09B965B5}' />
+    </window>
+    <window class='worksheet' hidden='true' name='各国和各商店的销售额'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[sum:num_sold:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:country:nk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{74035B33-687B-4B15-A1C8-AD1C90AA0F70}' />
+    </window>
+    <window class='dashboard' hidden='true' name='各国和各商店的销售额盘'>
+      <viewpoints>
+        <viewpoint name='各国各商店条形销售额'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[none:store:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='各国和各商店的销售额' />
+      </viewpoints>
+      <active id='12' />
+      <simple-id uuid='{138C0B63-3E84-42B2-B440-3D1BF927CB2A}' />
+    </window>
+    <window class='dashboard' hidden='true' name='各国多年的销售额变化'>
+      <viewpoints>
+        <viewpoint name='Canada年销售额变化'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Finland年销售额变化'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Italy年销售额变化'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Kenya年销售额变化'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Norway年销售额变化'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Singapore年销售额变化'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{449B2A86-389A-4764-AE79-2EE26ACD63E4}' />
+    </window>
+    <window class='worksheet' hidden='true' name='季度销售趋势'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tyr:date:ok]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+      <simple-id uuid='{CB21E3B1-12B8-4517-A157-89D63A309D61}' />
+    </window>
+    <window class='dashboard' hidden='true' name='整体分析'>
+      <viewpoints>
+        <viewpoint name='季度销售趋势'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[yr:date:ok]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='整体的销售趋势'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='5' />
+      <simple-id uuid='{CB64D07D-327E-4C96-BBC0-EBB21B21EA94}' />
+    </window>
+    <window class='worksheet' hidden='true' name='整体的销售趋势'>
+      <cards>
+        <edge name='left'>
+          <strip size='232'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tqr:date:qk]</field>
+            <field>[federated.05d6wu60nvl3j71c5j8el1vv9a6t].[tyr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{EDD5D019-F5E9-4DF9-8D20-E2BFEB3E560D}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='贴纸销量的各维度分析' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
