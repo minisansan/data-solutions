@@ -2,7 +2,7 @@
 #将表recommend_tb左连接user_action_tb，连接条件为rec_info_l=hobby_l AND user_id=rec_user
 #将非空的score加起来，并处理非空个数
 
-SELECT  ROUND(SUM(CASE WHEN u.score IS NOT NULL THEN u.score ELSE 0 END)/SUM(CASE WHEN u.score IS NOT NULL THEN 1 ELSE 0 END),3) AS avg_score
+SELECT  ROUND(AVG(u.score),3) AS avg_score
 FROM (SELECT DISTINCT rec_info_l,rec_user 
     FROM recommend_tb ) AS r
 LEFT JOIN user_action_tb AS u
@@ -23,7 +23,7 @@ rec_id	rec_info_l	rec_user	rec_time
 8	影视	106	2022-02-08 07:30:15
 用户信息及评分交叉表user_action_tb（user_id-用户id，hobby_l-用户喜好标签，score-综合评分），如下所示：
 注：该表score为对所有推荐给该用户的内容的综合评分，在计算用户平均评分切勿将推荐次数作为分母
-user_id	hobby_l	score
+user_id	hobby_l	scor
 101	健身	88
 102	影视	81
 103	美妆	78
